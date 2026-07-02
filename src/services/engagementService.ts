@@ -1,4 +1,4 @@
-import { interactions, publicProfiles, publications } from '../data/mockData';
+﻿import { interactions, publicProfiles, publications } from '../data/mockData';
 import type { EngagementProfile, InteractionType, Publication } from '../types';
 import { calculateInteractionScore, classifyActivity } from '../utils/scoring';
 import { normalizeHandle } from '../utils/security';
@@ -35,10 +35,10 @@ export function getEngagementProfiles(filters: EngagementFilters = {}): Engageme
       const { score, recurrenceBonus } = calculateInteractionScore(profileInteractions);
       return {
         ...profile,
-        likes: profileInteractions.filter((interaction) => interaction.type === 'like').length,
-        comments: profileInteractions.filter((interaction) => interaction.type === 'comment').length,
-        shares: profileInteractions.filter((interaction) => interaction.type === 'share').length,
-        mentions: profileInteractions.filter((interaction) => interaction.type === 'mention').length,
+        likes: profileInteractions.filter((interaction) => interaction.type === 'curtida').length,
+        comments: profileInteractions.filter((interaction) => interaction.type === 'comentário').length,
+        shares: profileInteractions.filter((interaction) => interaction.type === 'compartilhamento').length,
+        mentions: profileInteractions.filter((interaction) => interaction.type === 'menção').length,
         recurrenceBonus,
         score,
         level: classifyActivity(score),
@@ -77,16 +77,16 @@ export function getPublicationMetrics() {
     return {
       ...publication,
       interactions: publicationInteractions.length,
-      comments: publicationInteractions.filter((interaction) => interaction.type === 'comment').length,
-      likes: publicationInteractions.filter((interaction) => interaction.type === 'like').length,
-      shares: publicationInteractions.filter((interaction) => interaction.type === 'share').length,
-      mentions: publicationInteractions.filter((interaction) => interaction.type === 'mention').length,
+      comments: publicationInteractions.filter((interaction) => interaction.type === 'comentário').length,
+      likes: publicationInteractions.filter((interaction) => interaction.type === 'curtida').length,
+      shares: publicationInteractions.filter((interaction) => interaction.type === 'compartilhamento').length,
+      mentions: publicationInteractions.filter((interaction) => interaction.type === 'menção').length,
       topProfiles,
     };
   });
 }
 
-export function getDashboardMetrics(filters: EngagementFilters = {}) {
+export function getPainelMetrics(filters: EngagementFilters = {}) {
   const scopedInteractions = filteredInteractions(filters);
   const ranking = getEngagementProfiles(filters);
   return {

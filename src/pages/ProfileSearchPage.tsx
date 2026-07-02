@@ -1,4 +1,4 @@
-import { Search } from 'lucide-react';
+﻿import { Search } from 'lucide-react';
 import { useState } from 'react';
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis, CartesianGrid } from 'recharts';
 import { DataTable } from '../components/DataTable';
@@ -23,7 +23,7 @@ export function ProfileSearchPage({ initialHandle }: { initialHandle?: string })
       >
         <div>
           <span className="eyebrow">Consulta individual</span>
-          <h2>Pesquisar perfil publico</h2>
+          <h2>Pesquisar perfil público</h2>
         </div>
         <div className="search-box">
           <input value={handle} onChange={(event) => setHandle(event.target.value)} placeholder="@perfil" />
@@ -34,7 +34,7 @@ export function ProfileSearchPage({ initialHandle }: { initialHandle?: string })
         </div>
       </form>
 
-      {!details && <div className="alert error">Perfil nao encontrado nos dados simulados.</div>}
+      {!details && <div className="alert error">Perfil não encontrado nos dados simulados.</div>}
 
       {details?.profile && (
         <>
@@ -43,7 +43,7 @@ export function ProfileSearchPage({ initialHandle }: { initialHandle?: string })
             <div>
               <span className="eyebrow">{details.profile.city}</span>
               <h2>{details.profile.handle}</h2>
-              <p>{details.profile.name} | {details.profile.followers.toLocaleString('pt-BR')} seguidores publicos</p>
+              <p>{details.profile.name} | {details.profile.followers.toLocaleString('pt-BR')} seguidores públicos</p>
             </div>
             <LevelBadge level={details.profile.level} />
             <strong className="score-large">{details.profile.score} pts</strong>
@@ -51,7 +51,7 @@ export function ProfileSearchPage({ initialHandle }: { initialHandle?: string })
           <section className="content-grid two">
             <article className="panel">
               <div className="panel-header">
-                <h3>Evolucao por publicacao</h3>
+                <h3>Evolução por publicação</h3>
               </div>
               <div className="chart-box">
                 <ResponsiveContainer width="100%" height={260}>
@@ -70,20 +70,20 @@ export function ProfileSearchPage({ initialHandle }: { initialHandle?: string })
                 <h3>Resumo de atividade</h3>
               </div>
               <div className="summary-grid">
-                <span>Comentarios <strong>{details.profile.comments}</strong></span>
+                <span>Comentários <strong>{details.profile.comments}</strong></span>
                 <span>Curtidas <strong>{details.profile.likes}</strong></span>
                 <span>Compart. <strong>{details.profile.shares}</strong></span>
-                <span>Mencoes <strong>{details.profile.mentions}</strong></span>
+                <span>Menções <strong>{details.profile.mentions}</strong></span>
               </div>
             </article>
           </section>
           <DataTable
-            columns={['Data', 'Tipo', 'Publicacao', 'Registro publico']}
+            columns={['Data', 'Tipo', 'Publicação', 'Registro público']}
             rows={details.interactions.slice(0, 12).map((interaction) => [
               interaction.date,
               interactionLabel(interaction.type),
               interaction.publication?.title ?? '-',
-              interaction.text ?? 'Interacao sem texto associado',
+              interaction.text ?? 'Interação sem texto associado',
             ])}
           />
         </>

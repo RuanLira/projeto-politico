@@ -1,10 +1,10 @@
-import type { ActivityLevel, Interaction, InteractionType } from '../types';
+﻿import type { ActivityLevel, Interaction, InteractionType } from '../types';
 
 export const SCORE_RULES: Record<InteractionType, number> = {
-  like: 1,
-  comment: 3,
-  share: 5,
-  mention: 4,
+  curtida: 1,
+  comentário: 3,
+  compartilhamento: 5,
+  menção: 4,
 };
 
 export const RECURRENCE_BONUS = 10;
@@ -29,10 +29,10 @@ export function classifyActivity(score: number): ActivityLevel {
 
 export function interactionLabel(type: InteractionType) {
   const labels: Record<InteractionType, string> = {
-    like: 'Curtida',
-    comment: 'Comentario',
-    share: 'Compartilhamento',
-    mention: 'Mencao',
+    curtida: 'Curtida',
+    comentário: 'Comentário',
+    compartilhamento: 'Compartilhamento',
+    menção: 'Menção',
   };
   return labels[type];
 }

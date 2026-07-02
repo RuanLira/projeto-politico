@@ -1,4 +1,4 @@
-import { Eye, Search } from 'lucide-react';
+﻿import { Eye, Search } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { DataTable } from '../components/DataTable';
 import { Filters } from '../components/Filters';
@@ -54,7 +54,7 @@ export function RankingPage({
         </button>
       </div>
       <DataTable
-        columns={['Perfil', 'Classificacao', 'Pontuacao', 'Comentarios', 'Curtidas', 'Compart.', 'Mencoes', 'Detalhes']}
+        columns={['Perfil', 'Classificação', 'Pontuação', 'Comentários', 'Curtidas', 'Compart.', 'Menções', 'Detalhes']}
         rows={ranking.map((profile) => [
           <div className="identity-cell">
             <strong>{profile.handle}</strong>

@@ -1,4 +1,4 @@
-import type { ActivityLevel } from '../types';
+﻿import type { ActivityLevel } from '../types';
 
 export function LevelBadge({ level }: { level: ActivityLevel }) {
   const className = `level-badge ${level.toLowerCase().replace(' ', '-')}`;

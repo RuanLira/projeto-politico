@@ -1,4 +1,4 @@
-import {
+﻿import {
   BarChart3,
   FileText,
   Home,
@@ -18,13 +18,13 @@ import type { AppUser } from '../types';
 export type PageKey = 'dashboard' | 'ranking' | 'profile' | 'publications' | 'reports' | 'admin' | 'settings';
 
 const navItems = [
-  { key: 'dashboard', label: 'Dashboard', icon: Home },
+  { key: 'dashboard', label: 'Painel', icon: Home },
   { key: 'ranking', label: 'Ranking', icon: Trophy },
   { key: 'profile', label: 'Consulta', icon: Search },
-  { key: 'publications', label: 'Publicacoes', icon: FileText },
-  { key: 'reports', label: 'Relatorios', icon: BarChart3 },
-  { key: 'admin', label: 'Administracao', icon: Users },
-  { key: 'settings', label: 'Configuracoes', icon: Settings },
+  { key: 'publications', label: 'Publicações', icon: FileText },
+  { key: 'reports', label: 'Relatórios', icon: BarChart3 },
+  { key: 'admin', label: 'Administração', icon: Users },
+  { key: 'settings', label: 'Configurações', icon: Settings },
 ] as const;
 
 export function Layout({
@@ -47,7 +47,7 @@ export function Layout({
       <div className="brand">
         <div className="brand-mark">CP</div>
         <div>
-          <strong>Controle Politico</strong>
+          <strong>Controle Político</strong>
           <span>Painel de Engajamento</span>
         </div>
       </div>
@@ -73,7 +73,7 @@ export function Layout({
       <div className="sidebar-footer">
         <div className="security-note">
           <ShieldCheck size={18} />
-          <span>Uso autorizado, etico e sem coleta de senhas de redes sociais.</span>
+          <span>Uso autorizado, ético e sem coleta de senhas de redes sociais.</span>
         </div>
         <button className="ghost-button full" onClick={onLogout}>
           <LogOut size={18} />
@@ -92,7 +92,7 @@ export function Layout({
         <button className="icon-button" onClick={() => setOpen(true)} title="Abrir menu">
           <Menu size={22} />
         </button>
-        <strong>Controle Politico</strong>
+        <strong>Controle Político</strong>
         <div className="user-pill">{user.role}</div>
       </header>
       {open && (
@@ -127,13 +127,13 @@ export function Layout({
 
 function pageTitle(page: PageKey) {
   const titles: Record<PageKey, string> = {
-    dashboard: 'Dashboard',
+    dashboard: 'Painel',
     ranking: 'Ranking de Engajamento',
     profile: 'Consulta de Perfil',
-    publications: 'Publicacoes',
-    reports: 'Relatorios',
-    admin: 'Administracao',
-    settings: 'Configuracoes',
+    publications: 'Publicações',
+    reports: 'Relatórios',
+    admin: 'Administração',
+    settings: 'Configurações',
   };
   return titles[page];
 }

@@ -1,4 +1,4 @@
-import type { InteractionType, Publication } from '../types';
+﻿import type { InteractionType, Publication } from '../types';
 
 export function Filters({
   query,
@@ -21,14 +21,14 @@ export function Filters({
     <div className="filters">
       <input value={query ?? ''} onChange={(event) => onChange({ query: event.target.value })} placeholder="Buscar por @" />
       <select value={type ?? 'all'} onChange={(event) => onChange({ type: event.target.value })}>
-        <option value="all">Todas as interacoes</option>
-        <option value="like">Curtidas</option>
-        <option value="comment">Comentarios</option>
-        <option value="share">Compartilhamentos</option>
-        <option value="mention">Mencoes</option>
+        <option value="all">Todas as interações</option>
+        <option value="curtida">Curtidas</option>
+        <option value="comentário">Comentários</option>
+        <option value="compartilhamento">Compartilhamentos</option>
+        <option value="menção">Menções</option>
       </select>
       <select value={publicationId ?? 'all'} onChange={(event) => onChange({ publicationId: event.target.value })}>
-        <option value="all">Todas as publicacoes</option>
+        <option value="all">Todas as publicações</option>
         {publications.map((publication) => (
           <option key={publication.id} value={publication.id}>
             {publication.title}

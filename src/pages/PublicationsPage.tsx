@@ -1,4 +1,4 @@
-import { CalendarDays, Plus } from 'lucide-react';
+﻿import { CalendarDays, Plus } from 'lucide-react';
 import { useState } from 'react';
 import { DataTable } from '../components/DataTable';
 import { getPublicationMetrics } from '../services/engagementService';
@@ -21,7 +21,7 @@ export function PublicationsPage() {
         </div>
         <button className="primary-button fit">
           <Plus size={18} />
-          Nova publicacao
+          Nova publicação
         </button>
       </div>
 
@@ -36,9 +36,9 @@ export function PublicationsPage() {
             <p><CalendarDays size={16} /> {publication.date} | {publication.topic}</p>
             <div className="summary-grid">
               <span>Alcance <strong>{publication.reach.toLocaleString('pt-BR')}</strong></span>
-              <span>Impressoes <strong>{publication.impressions.toLocaleString('pt-BR')}</strong></span>
-              <span>Interacoes <strong>{publication.interactions}</strong></span>
-              <span>Comentarios <strong>{publication.comments}</strong></span>
+              <span>Impressões <strong>{publication.impressions.toLocaleString('pt-BR')}</strong></span>
+              <span>Interações <strong>{publication.interactions}</strong></span>
+              <span>Comentários <strong>{publication.comments}</strong></span>
             </div>
             <div className="mini-list">
               <strong>Mais engajados</strong>
@@ -51,7 +51,7 @@ export function PublicationsPage() {
       </div>
 
       <DataTable
-        columns={['Publicacao', 'Tipo', 'Data', 'Curtidas', 'Comentarios', 'Compart.', 'Mencoes']}
+        columns={['Publicacao', 'Tipo', 'Data', 'Curtidas', 'Comentários', 'Compart.', 'Menções']}
         rows={metrics.map((publication) => [
           publication.title,
           publication.contentType,

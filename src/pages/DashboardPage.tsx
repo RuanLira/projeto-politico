@@ -1,19 +1,19 @@
-import { BarChart3, MessageCircle, Target, TrendingUp, Users } from 'lucide-react';
+﻿import { BarChart3, MessageCircle, Target, TrendingUp, Users } from 'lucide-react';
 import { Area, AreaChart, Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { Filters } from '../components/Filters';
 import { LevelBadge } from '../components/LevelBadge';
 import { MetricCard } from '../components/MetricCard';
 import { engagementByPeriod, politician, publications } from '../data/mockData';
-import { getDashboardMetrics, type EngagementFilters } from '../services/engagementService';
+import { getPainelMetrics, type EngagementFilters } from '../services/engagementService';
 
-export function DashboardPage({
+export function PainelPage({
   filters,
   onFiltersChange,
 }: {
   filters: EngagementFilters;
   onFiltersChange: (filters: EngagementFilters) => void;
 }) {
-  const metrics = getDashboardMetrics(filters);
+  const metrics = getPainelMetrics(filters);
 
   return (
     <div className="page-stack">
@@ -22,24 +22,24 @@ export function DashboardPage({
         <div>
           <span className="eyebrow">{politician.office} - {politician.party}</span>
           <h2>{politician.name}</h2>
-          <p>{politician.region} | acompanhamento etico de interacoes publicas</p>
+          <p>{politician.region} | acompanhamento ético de interações públicas</p>
         </div>
       </section>
 
       <Filters publications={publications} {...filters} onChange={(next) => onFiltersChange({ ...filters, ...next })} />
 
       <section className="metrics-grid">
-        <MetricCard label="Perfis monitorados" value={metrics.monitoredProfiles} trend="+12% no periodo" icon={Users} />
-        <MetricCard label="Interacoes" value={metrics.totalInteractions} trend="Dados simulados" icon={MessageCircle} tone="green" />
-        <MetricCard label="Muito ativos" value={metrics.highlyActive} trend="Prioridade estrategica" icon={Target} tone="gold" />
-        <MetricCard label="Pontuacao media" value={metrics.averageScore} trend="Score ponderado" icon={TrendingUp} />
+        <MetricCard label="Perfis monitorados" value={metrics.monitoredProfiles} trend="+12% no período" icon={Users} />
+        <MetricCard label="Interações" value={metrics.totalInteractions} trend="Dados simulados" icon={MessageCircle} tone="green" />
+        <MetricCard label="Muito ativos" value={metrics.highlyActive} trend="Prioridade estratégica" icon={Target} tone="gold" />
+        <MetricCard label="Pontuação média" value={metrics.averageScore} trend="Pontuação ponderada" icon={TrendingUp} />
       </section>
 
       <section className="content-grid two">
         <article className="panel">
           <div className="panel-header">
             <div>
-              <span className="eyebrow">Periodo</span>
+              <span className="eyebrow">Período</span>
               <h3>Engajamento por semana</h3>
             </div>
             <BarChart3 size={22} />
@@ -83,7 +83,7 @@ export function DashboardPage({
 
       <section className="panel">
         <div className="panel-header">
-          <h3>Distribuicao de interacoes</h3>
+          <h3>Distribuição de interações</h3>
         </div>
         <div className="chart-box compact">
           <ResponsiveContainer width="100%" height={240}>

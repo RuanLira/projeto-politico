@@ -1,4 +1,4 @@
-import { ShieldCheck, UserPlus } from 'lucide-react';
+﻿import { ShieldCheck, UserPlus } from 'lucide-react';
 import { useState } from 'react';
 import { DataTable } from '../components/DataTable';
 import { auditLogs, teamUsers } from '../data/mockData';
@@ -7,7 +7,7 @@ import { canAccess } from '../utils/security';
 
 export function AdminPage({ user }: { user: AppUser }) {
   const [users, setUsers] = useState(teamUsers);
-  const allowed = canAccess(user.role, ['Admin']);
+  const allowed = canAccess(user.role, ['Administrador']);
 
   function addUser() {
     setUsers((current) => [
@@ -28,7 +28,7 @@ export function AdminPage({ user }: { user: AppUser }) {
       <div className="panel empty-state">
         <ShieldCheck size={34} />
         <h2>Acesso restrito</h2>
-        <p>A administracao de usuarios e permissoes esta disponivel apenas para usuarios Admin.</p>
+        <p>A administração de usuários e permissões está disponível apenas para administradores.</p>
       </div>
     );
   }
@@ -42,12 +42,12 @@ export function AdminPage({ user }: { user: AppUser }) {
         </div>
         <button className="primary-button fit" onClick={addUser}>
           <UserPlus size={18} />
-          Adicionar usuario
+          Adicionar usuário
         </button>
       </div>
 
       <DataTable
-        columns={['Nome', 'E-mail', 'Nivel', 'Status', 'Ultimo acesso']}
+        columns={['Nome', 'E-mail', 'Nível', 'Status', 'Último acesso']}
         rows={users.map((teamUser) => [
           teamUser.name,
           teamUser.email,
@@ -55,9 +55,9 @@ export function AdminPage({ user }: { user: AppUser }) {
             const nextRole = event.target.value as Role;
             setUsers((current) => current.map((item) => item.id === teamUser.id ? { ...item, role: nextRole } : item));
           }}>
-            <option>Admin</option>
+            <option>Administrador</option>
             <option>Gabinete</option>
-            <option>Comunicacao</option>
+            <option>Comunicação</option>
             <option>Consulta</option>
           </select>,
           teamUser.status,
@@ -70,7 +70,7 @@ export function AdminPage({ user }: { user: AppUser }) {
           <h3>Logs de atividade</h3>
         </div>
         <DataTable
-          columns={['Data', 'Usuario', 'Acao', 'Modulo', 'Nivel']}
+          columns={['Data', 'Usuario', 'Acao', 'Modulo', 'Nível']}
           rows={auditLogs.map((log) => [log.date, log.user, log.action, log.target, log.severity])}
         />
       </section>

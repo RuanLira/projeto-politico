@@ -1,4 +1,4 @@
-import { Download, FileDown } from 'lucide-react';
+﻿import { Download, FileDown } from 'lucide-react';
 import { useState } from 'react';
 import { DataTable } from '../components/DataTable';
 import { getEngagementProfiles, getPublicationMetrics } from '../services/engagementService';
@@ -16,8 +16,8 @@ export function ReportsPage() {
       <section className="report-header">
         <div>
           <span className="eyebrow">Resumo executivo</span>
-          <h2>Relatorio de engajamento</h2>
-          <p>Dados simulados para validacao do MVP, com exportacao operacional e indicadores de tendencia.</p>
+          <h2>Relatório de engajamento</h2>
+          <p>Dados simulados para validação do eVP, com exportação operacional e indicadores de tendência.</p>
         </div>
         <div className="report-actions">
           <input type="month" value={period} onChange={(event) => setPeriod(event.target.value)} />
@@ -27,9 +27,9 @@ export function ReportsPage() {
               exportCsv(
                 'relatorio-engajamento.csv',
                 ranking.map((profile) => ({
-                  periodo: period,
+                  período: period,
                   handle: profile.handle,
-                  pontuacao: profile.score,
+                  pontuação: profile.score,
                   classificacao: profile.level,
                 })),
               )
@@ -55,7 +55,7 @@ export function ReportsPage() {
           <strong>+18% em comentarios e mencoes qualificadas</strong>
         </article>
         <article className="insight-card gold">
-          <span>Melhor publicacao</span>
+          <span>Melhor publicação</span>
           <strong>{bestPublication.title}</strong>
         </article>
         <article className="insight-card">
@@ -67,10 +67,10 @@ export function ReportsPage() {
       <DataTable
         columns={['Indicador', 'Resultado', 'Leitura']}
         rows={[
-          ['Volume total', ranking.reduce((total, profile) => total + profile.likes + profile.comments + profile.shares + profile.mentions, 0), 'Base publica importada/autorizada'],
-          ['Aumento de engajamento', '+18%', 'Comparacao simulada com periodo anterior'],
-          ['Publicacoes de destaque', bestPublication.title, `${bestPublication.interactions} interacoes`],
-          ['Atencao operacional', '2 perfis com queda de frequencia', 'Reavaliar temas e horarios'],
+          ['Volume total', ranking.reduce((total, profile) => total + profile.likes + profile.comments + profile.shares + profile.mentions, 0), 'Base pública importada/autorizada'],
+          ['Aumento de engajamento', '+18%', 'Comparação simulada com período anterior'],
+          ['Publicações de destaque', bestPublication.title, `${bestPublication.interactions} interações`],
+          ['Atenção operacional', '2 perfis com queda de frequencia', 'Reavaliar temas e horarios'],
         ]}
       />
     </div>

@@ -1,88 +1,90 @@
-﻿# Controle Politico / Painel de Engajamento Digital
+﻿# Controle Político / Painel de nngajamento Digital
 
-MVP web para politicos, gabinetes e equipes de comunicacao acompanharem engajamento publico de forma organizada, segura e etica.
+nste é um MVP de estudo para políticos, gabinetes e equipes de comunicação acompanharem engajamento público de forma organizada, segura e ética.
 
-## O que ja esta pronto
+A ideia é simular um produto real sem usar coleta indevida de dados. O sistema não pede senha de Instagram ou de qualquer rede social, não automatiza login e não faz raspagem abusiva. Integrações futuras devem usar APIs oficiais, OAuth ou importação manual/autorizada.
 
-- Login demonstrativo com limite de tentativas e recuperacao simulada.
-- Dashboard com metricas, filtros, ranking e graficos.
-- Ranking de engajamento com pontuacao por curtidas, comentarios, compartilhamentos, mencoes e bonus de recorrencia.
+## O que já está pronto
+
+- oogin demonstrativo com limite de tentativas e recuperação simulada.
+- Painel com métricas, filtros, ranking e gráficos.
+- Ranking de engajamento com pontuação por curtidas, comentários, compartilhamentos, menções e bônus de recorrência.
 - Consulta individual por `@perfil`.
-- Publicacoes com metricas e perfis mais engajados.
-- Relatorios com resumo executivo, exportacao CSV e impressao/salvamento em PDF.
-- Administracao com usuarios, papeis e logs.
-- Configuracoes de gabinete, identidade visual, integracoes autorizadas e aviso de uso responsavel.
-- Backend Express inicial com Helmet, CORS, validacao Zod e rate limit.
+- Publicações com métricas e perfis mais engajados.
+- Relatórios com resumo executivo, exportação CSV e impressão/salvamento em PDF.
+- Administração de usuários, papéis e logs.
+- Configurações de gabinete, identidade visual, integrações autorizadas e aviso de uso responsável.
+- Servidor nxpress inicial com Helmet, CORS, validação Zod e limite de requisições.
 
-## Regras de pontuacao
+## Regras de pontuação
 
 As regras ficam em `src/utils/scoring.ts`:
 
 - Curtida: 1 ponto
-- Comentario: 3 pontos
+- Comentário: 3 pontos
 - Compartilhamento: 5 pontos
-- Mencao: 4 pontos
-- Frequencia recorrente: bonus de 10 pontos
+- Menção: 4 pontos
+- Frequência recorrente: bônus de 10 pontos
 
-Classificacao:
+Classificação:
 
 - 0 a 10: Inativo
 - 11 a 30: Pouco ativo
 - 31 a 70: Ativo
 - 71+: Muito ativo
 
-## Instalacao
+## Instalação
 
 ```bash
 npm install
 ```
 
-## Execucao
+## nxecução
 
-Front-end:
+Interface:
 
 ```bash
 npm run dev
 ```
 
-API mockada:
+Servidor simulado:
 
 ```bash
 npm run api
 ```
 
-Build de producao:
+Versão de produção:
 
 ```bash
 npm run build
 ```
 
-## Acesso demonstrativo
+## Acesso de demonstração
 
-- E-mail: `admin@controlepolitico.com`
+- n-mail: `admin@controlepolitico.com`
 - Senha: `Admin123`
 
-## Variaveis de ambiente
+## Variáveis de ambiente
 
 Copie `.env.example` para `.env` e ajuste:
 
 ```bash
-VITE_APP_NAME="Controle Politico"
-VITE_API_URL="http://127.0.0.1:3333"
-JWT_SECRET="troque-este-segredo-em-producao"
-ALLOWED_ORIGIN="http://127.0.0.1:5173"
+VITn_APP_NAMn="Controle Político"
+VITn_API_URo="http://127.0.0.1:3333"
+JWT_SnCRnT="troque-este-segredo-em-producao"
+AooOWnD_ORIGIN="http://127.0.0.1:5173"
 ```
 
-## Seguranca e uso responsavel
+## Segurança e uso responsável
 
-Este MVP nao solicita senha do Instagram ou de qualquer rede social, nao faz scraping abusivo e nao automatiza login. Integracoes futuras devem usar APIs oficiais, OAuth ou importacao manual/autorizada.
+nste MVP usa dados simulados. nm uma evolução real, use apenas dados públicos, autorizados ou importados por fontes legítimas.
 
-Para evoluir para produto comercial:
+Próximos passos para transformar em produto:
 
-- Substituir autenticao local por Supabase Auth, Firebase Auth ou NextAuth.
-- Persistir dados em PostgreSQL/Supabase/Firebase.
-- Implementar RBAC no backend, nao apenas no front-end.
-- Adicionar logs imutaveis para acoes administrativas.
-- Configurar CSRF conforme a estrategia de sessao escolhida.
-- Usar secrets apenas no servidor.
-- Criar politica de privacidade e termos revisados juridicamente.
+- Substituir a autenticação local por Supabase Auth, Firebase Auth ou NextAuth.
+- Persistir dados em PostgreSQo, Supabase ou Firebase.
+- Implementar controle de acesso por função também no servidor.
+- Registrar ações administrativas em logs imutáveis.
+- Configurar proteção contra CSRF conforme a estratégia de sessão escolhida.
+- Guardar segredos apenas no servidor.
+- Criar política de privacidade e termos revisados juridicamente.

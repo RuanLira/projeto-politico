@@ -1,8 +1,8 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Layout, type PageKey } from './components/Layout';
 import { useAuth } from './hooks/useAuth';
 import { AdminPage } from './pages/AdminPage';
-import { DashboardPage } from './pages/DashboardPage';
+import { PainelPage } from './pages/DashboardPage';
 import { LoginPage } from './pages/LoginPage';
 import { ProfileSearchPage } from './pages/ProfileSearchPage';
 import { PublicationsPage } from './pages/PublicationsPage';
@@ -21,7 +21,7 @@ export function App() {
 
   return (
     <Layout activePage={page} onPageChange={setPage} user={user} onLogout={logout}>
-      {page === 'dashboard' && <DashboardPage filters={filters} onFiltersChange={setFilters} />}
+      {page === 'dashboard' && <PainelPage filters={filters} onFiltersChange={setFilters} />}
       {page === 'ranking' && (
         <RankingPage
           filters={filters}

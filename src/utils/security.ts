@@ -1,4 +1,4 @@
-const SUSPICIOUS_CHARS = /[<>{}$]/g;
+﻿const SUSPICIOUS_CHARS = /[<>{}$]/g;
 
 export function sanitizeInput(value: string) {
   return value.trim().replace(SUSPICIOUS_CHARS, '');

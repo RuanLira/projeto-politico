@@ -1,4 +1,4 @@
-export function exportCsv(filename: string, rows: Record<string, string | number | boolean>[]) {
+﻿export function exportCsv(filename: string, rows: Record<string, string | number | boolean>[]) {
   if (!rows.length) return;
   const headers = Object.keys(rows[0]);
   const escape = (value: string | number | boolean) => `"${String(value).replace(/"/g, '""')}"`;

@@ -1,4 +1,4 @@
-import { Save, Upload } from 'lucide-react';
+﻿import { Save, Upload } from 'lucide-react';
 import { useState } from 'react';
 import { politician } from '../data/mockData';
 
@@ -18,7 +18,7 @@ export function SettingsPage() {
             <h3>Dados do gabinete</h3>
           </div>
           <div className="form-grid">
-            <label>Nome publico<input defaultValue={politician.name} /></label>
+            <label>Nome público<input defaultValue={politician.name} /></label>
             <label>Cargo<input defaultValue={politician.office} /></label>
             <label>Partido<input defaultValue={politician.party} /></label>
             <label>Regiao<input defaultValue={politician.region} /></label>
@@ -45,22 +45,22 @@ export function SettingsPage() {
         </div>
         <div className="integration-list">
           <label><input type="checkbox" defaultChecked /> Importacao manual por CSV validado</label>
-          <label><input type="checkbox" /> OAuth oficial Instagram Graph API</label>
-          <label><input type="checkbox" /> OAuth oficial Facebook Pages</label>
-          <label><input type="checkbox" defaultChecked /> Relatorios semanais por e-mail</label>
+          <label><input type="checkbox" />  Auth oficial Instagram Graph API</label>
+          <label><input type="checkbox" />  Auth oficial Facebook Pages</label>
+          <label><input type="checkbox" defaultChecked /> Relatórios semanais por e-mail</label>
         </div>
         <div className="responsible-box light">
-          O sistema nao solicita senhas de redes sociais, nao automatiza login e nao executa scraping abusivo.
+            O sistema não solicita senhas de redes sociais, não automatiza login e não executa raspagem abusiva.
         </div>
       </section>
 
       <section className="panel">
         <div className="panel-header">
-          <h3>Politica de uso responsavel e privacidade</h3>
+          <h3>Politica de uso responsável e privacidade</h3>
         </div>
         <p className="muted">
-          Use apenas dados publicos, autorizados ou importados por fontes legitimas. Evite coletar dados sensiveis
-          desnecessarios e mantenha controle de acesso conforme a funcao de cada integrante da equipe.
+          Use apenas dados públicos, autorizados ou importados por fontes legítimas. Evite coletar dados sensíveis
+          desnecessarios e mantenha controle de acesso conforme a função de cada integrante da equipe.
         </p>
       </section>
 

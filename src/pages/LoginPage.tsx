@@ -1,4 +1,4 @@
-import { Lock, Mail, ShieldCheck } from 'lucide-react';
+﻿import { Lock, Mail, ShieldCheck } from 'lucide-react';
 import { useState } from 'react';
 import type { FormEvent } from 'react';
 import { requestPasswordReset } from '../services/authService';
@@ -20,7 +20,7 @@ export function LoginPage() {
     try {
       await login(email, password);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Nao foi possivel entrar.');
+      setError(err instanceof Error ? err.message : 'Não foi possível entrar.');
     } finally {
       setLoading(false);
     }
@@ -32,9 +32,9 @@ export function LoginPage() {
     setMessage('');
     try {
       await requestPasswordReset(email);
-      setMessage('Instrucao de recuperacao enviada para o e-mail informado.');
+      setMessage('Instrução de recuperação enviada para o e-mail informado.');
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Nao foi possivel recuperar a senha.');
+      setError(err instanceof Error ? err.message : 'Não foi possível recuperar a senha.');
     } finally {
       setLoading(false);
     }
@@ -45,13 +45,13 @@ export function LoginPage() {
       <section className="login-hero">
         <div className="login-brand">
           <div className="brand-mark large">CP</div>
-          <span>Controle Politico</span>
+          <span>Controle Político</span>
         </div>
         <h1>Painel de Engajamento Digital</h1>
-        <p>Monitoramento organizado de interacoes publicas com governanca, permissoes e uso responsavel de dados.</p>
+        <p>Monitoramento organizado de interações públicas com governança, permissões e uso responsável de dados.</p>
         <div className="responsible-box">
           <ShieldCheck size={20} />
-          <span>Integracoes somente por APIs oficiais, OAuth ou importacao autorizada. Nunca solicitamos senha de redes sociais.</span>
+          <span>Integrações somente por APIs oficiais, OAuth ou importação autorizada. Nunca solicitamos senha de redes sociais.</span>
         </div>
       </section>
       <section className="login-card">
@@ -82,7 +82,7 @@ export function LoginPage() {
           </button>
         </form>
         <div className="demo-access">
-          <strong>Acesso demonstrativo</strong>
+          <strong>Acesso de demonstração</strong>
           <span>admin@controlepolitico.com / Admin123</span>
         </div>
       </section>

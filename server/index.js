@@ -1,4 +1,4 @@
-import cors from 'cors';
+﻿import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
 import rateLimit from 'express-rate-limit';
@@ -35,17 +35,17 @@ const loginSchema = z.object({
 });
 
 app.get('/api/health', (_request, response) => {
-  response.json({ ok: true, service: 'Controle Politico API' });
+  response.json({ ok: true, service: 'Controle Político API' });
 });
 
 app.post('/api/auth/login', authLimiter, (request, response) => {
   const parsed = loginSchema.safeParse(request.body);
   if (!parsed.success) {
-    return response.status(400).json({ message: 'Dados de login invalidos.' });
+    return response.status(400).json({ message: 'Dados de login inválidos.' });
   }
 
   if (parsed.data.email !== 'admin@controlepolitico.com' || parsed.data.password !== 'Admin123') {
-    return response.status(401).json({ message: 'Credenciais invalidas.' });
+    return response.status(401).json({ message: 'Credenciais inválidas.' });
   }
 
   return response.json({
@@ -53,20 +53,20 @@ app.post('/api/auth/login', authLimiter, (request, response) => {
       id: 'auth-1',
       name: 'Ruan Lira',
       email: parsed.data.email,
-      role: 'Admin',
+      role: 'Administrador',
     },
   });
 });
 
 app.get('/api/search', searchLimiter, (request, response) => {
   const handle = String(request.query.handle ?? '').replace(/[<>{}$]/g, '').slice(0, 60);
-  response.json({ handle, message: 'Endpoint preparado para busca autorizada por APIs oficiais ou dados importados.' });
+  response.json({ handle, message: 'Ponto de acesso preparado para busca autorizada por APIs oficiais ou dados importados.' });
 });
 
 app.use((_request, response) => {
-  response.status(404).json({ message: 'Rota nao encontrada.' });
+  response.status(404).json({ message: 'Rota não encontrada.' });
 });
 
 app.listen(port, () => {
-  console.log(`Controle Politico API ouvindo em http://127.0.0.1:${port}`);
+  console.log(`Controle Político API rodando em http://127.0.0.1:${port}`);
 });

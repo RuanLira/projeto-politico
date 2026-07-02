@@ -1,6 +1,6 @@
-export type Role = 'Admin' | 'Gabinete' | 'Comunicacao' | 'Consulta';
+﻿export type Role = 'Administrador' | 'Gabinete' | 'Comunicação' | 'Consulta';
 
-export type InteractionType = 'like' | 'comment' | 'share' | 'mention';
+export type InteractionType = 'curtida' | 'comentário' | 'compartilhamento' | 'menção';
 
 export type ActivityLevel = 'Inativo' | 'Pouco ativo' | 'Ativo' | 'Muito ativo';
 
@@ -27,7 +27,7 @@ export interface Publication {
   id: string;
   title: string;
   platform: 'Instagram' | 'Facebook' | 'X' | 'TikTok';
-  contentType: 'Video' | 'Imagem' | 'Carrossel' | 'Texto';
+  contentType: 'Vídeo' | 'Imagem' | 'Carrossel' | 'Texto';
   date: string;
   reach: number;
   impressions: number;
