@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env
+.npm-cache/
+*.log
+vite.config.d.ts
+vite.config.ts
+*.tsbuildinfo
