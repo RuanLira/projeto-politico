@@ -44,7 +44,7 @@ export function SettingsPage() {
           <h3>Integracoes autorizadas</h3>
         </div>
         <div className="integration-list">
-          <label><input type="checkbox" defaultChecked /> Importacao manual por CSV validado</label>
+          <label><input type="checkbox" defaultChecked /> Importação manual por CSV validado</label>
           <label><input type="checkbox" />  Auth oficial Instagram Graph API</label>
           <label><input type="checkbox" />  Auth oficial Facebook Pages</label>
           <label><input type="checkbox" defaultChecked /> Relatórios semanais por e-mail</label>

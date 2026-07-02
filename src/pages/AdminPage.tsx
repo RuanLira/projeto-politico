@@ -38,7 +38,7 @@ export function AdminPage({ user }: { user: AppUser }) {
       <div className="action-row">
         <div>
           <span className="eyebrow">Equipe</span>
-          <h2>Usuarios e permissoes</h2>
+          <h2>Usuários e permissões</h2>
         </div>
         <button className="primary-button fit" onClick={addUser}>
           <UserPlus size={18} />

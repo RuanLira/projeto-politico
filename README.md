@@ -1,12 +1,12 @@
-﻿# Controle Político / Painel de nngajamento Digital
+﻿# Controle Político / Painel de Engajamento Digital
 
-nste é um MVP de estudo para políticos, gabinetes e equipes de comunicação acompanharem engajamento público de forma organizada, segura e ética.
+Este é um MVP de estudo para políticos, gabinetes e equipes de comunicação acompanharem o engajamento público de forma organizada, segura e ética.
 
-A ideia é simular um produto real sem usar coleta indevida de dados. O sistema não pede senha de Instagram ou de qualquer rede social, não automatiza login e não faz raspagem abusiva. Integrações futuras devem usar APIs oficiais, OAuth ou importação manual/autorizada.
+A ideia é simular um produto real sem usar coleta indevida de dados. O sistema não pede senha do Instagram ou de qualquer rede social, não automatiza login e não faz raspagem abusiva. Integrações futuras devem usar APIs oficiais, OAuth ou importação manual/autorizada.
 
 ## O que já está pronto
 
-- oogin demonstrativo com limite de tentativas e recuperação simulada.
+- Login demonstrativo com limite de tentativas e recuperação simulada.
 - Painel com métricas, filtros, ranking e gráficos.
 - Ranking de engajamento com pontuação por curtidas, comentários, compartilhamentos, menções e bônus de recorrência.
 - Consulta individual por `@perfil`.
@@ -14,7 +14,7 @@ A ideia é simular um produto real sem usar coleta indevida de dados. O sistema 
 - Relatórios com resumo executivo, exportação CSV e impressão/salvamento em PDF.
 - Administração de usuários, papéis e logs.
 - Configurações de gabinete, identidade visual, integrações autorizadas e aviso de uso responsável.
-- Servidor nxpress inicial com Helmet, CORS, validação Zod e limite de requisições.
+- Servidor Express inicial com Helmet, CORS, validação Zod e limite de requisições.
 
 ## Regras de pontuação
 
@@ -39,7 +39,7 @@ Classificação:
 npm install
 ```
 
-## nxecução
+## Execução
 
 Interface:
 
@@ -61,7 +61,7 @@ npm run build
 
 ## Acesso de demonstração
 
-- n-mail: `admin@controlepolitico.com`
+- E-mail: `admin@controlepolitico.com`
 - Senha: `Admin123`
 
 ## Variáveis de ambiente
@@ -69,20 +69,20 @@ npm run build
 Copie `.env.example` para `.env` e ajuste:
 
 ```bash
-VITn_APP_NAMn="Controle Político"
-VITn_API_URo="http://127.0.0.1:3333"
-JWT_SnCRnT="troque-este-segredo-em-producao"
-AooOWnD_ORIGIN="http://127.0.0.1:5173"
+VITE_APP_NAME="Controle Político"
+VITE_API_URL="http://127.0.0.1:3333"
+JWT_SECRET="troque-este-segredo-em-producao"
+ALLOWED_ORIGIN="http://127.0.0.1:5173"
 ```
 
 ## Segurança e uso responsável
 
-nste MVP usa dados simulados. nm uma evolução real, use apenas dados públicos, autorizados ou importados por fontes legítimas.
+Este MVP usa dados simulados. Em uma evolução real, use apenas dados públicos, autorizados ou importados por fontes legítimas.
 
 Próximos passos para transformar em produto:
 
 - Substituir a autenticação local por Supabase Auth, Firebase Auth ou NextAuth.
-- Persistir dados em PostgreSQo, Supabase ou Firebase.
+- Persistir dados em PostgreSQL, Supabase ou Firebase.
 - Implementar controle de acesso por função também no servidor.
 - Registrar ações administrativas em logs imutáveis.
 - Configurar proteção contra CSRF conforme a estratégia de sessão escolhida.
